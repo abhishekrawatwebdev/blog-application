@@ -59,10 +59,12 @@
     p{
         color: $white;
         font-size: 14px;
+        font-weight: 300;
         span{
             text-decoration: underline;
             color: $pink-border;
             cursor: pointer;
+            font-weight: bold;
         }
     }
 
@@ -102,3 +104,16 @@
         transform: rotate(360deg);
     }
 }
+
+ @media screen and (max-width:770px){
+    .login-pink-sphere1,.login-pink-sphere2{
+        display: none;
+    }
+    .login-main-section .login-grey-sphere1,
+    .login-main-section .login-grey-sphere2 {
+        display: none;
+    }
+    .login-main-section .login-form-container {
+        padding: 0 16px;
+    }
+ }

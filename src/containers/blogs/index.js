@@ -1,7 +1,7 @@
 import React from 'react'
 import MainSection from './main-section'
 
-const CreateBlog = () => {
+const Blogs = () => {
   return (
     <div>
         <MainSection/>
@@ -9,4 +9,4 @@ const CreateBlog = () => {
   )
 }
 
-export default CreateBlog
+export default Blogs

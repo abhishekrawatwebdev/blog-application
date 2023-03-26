@@ -6,18 +6,26 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const isPreHeaderHidden = isHeaderHidden(location.pathname);
-    useEffect(()=>{
+    useEffect(() => {
         isHeaderHidden(location.pathname)
-    },[location])
-  return (
-    <div>
-        {isPreHeaderHidden ? null: <div>
-            header is visible
-            <button onClick={()=>navigate("/login")}>login</button>
-              <button onClick={() => navigate("/signup")}>signup</button>
-        </div> }
-    </div>
-  )
+    }, [location])
+    return (
+        <div>
+            {isPreHeaderHidden ? null :
+                <div className='header-container'>
+                    <div className='logo-container'>logo</div>
+                    <div className='header-links-container'>links</div>
+                    <div className='header-search-container'>filter</div>
+                </div>
+            }
+        </div>
+    )
 }
+
+//logo
+//home tab
+//Blogs
+//Profile
+//search filter
 
 export default Header;

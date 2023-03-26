@@ -1,0 +1,74 @@
+@import "../../variables";
+
+.error-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .error-dot-square{
+            height: 100px;
+    position: absolute;
+    z-index: 1;
+    }
+    .square1{
+         left: 6%;
+    bottom: 5%;
+    }
+    .square2{
+         right: 5%;
+        top: 20%;
+    }
+    .error-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: $white;
+        padding: 32px;
+        z-index: 2;
+
+    }
+    .error-btn-grp{
+        display: flex;
+        gap: 24px;
+        margin: 16px 0;
+    }
+    .error-btn{
+        padding: 12px 16px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        cursor: pointer;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0.7;
+        min-width: 120px;
+        &:hover{
+            opacity: 1;
+        }
+
+    }
+    .error-btn-home{
+        background-color: $pink-border;
+        color: $white;
+
+    }
+    h1{
+        font-size: 120px;
+    }
+    p{
+    width: 400px;
+    text-align: center;
+    padding: 12px 0;
+    }
+
+    @media screen and (max-width:600px) {
+        .error-dot-square{
+            display: none;
+        }
+        p{
+            width: 100%;
+        }
+    }
+}
