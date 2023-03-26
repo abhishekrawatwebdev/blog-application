@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { isHeaderHidden } from '../../utils/checkHeaderHidden';
 import mixedbag from "../../resources/mixedbag.png"
 import "./styles.scss"
 import { CloseIcon, MenuIcon } from '../icons';
+import { checkLoginStatus } from '../../utils/login-status';
 
 
 const Header = () => {
@@ -13,9 +15,25 @@ const Header = () => {
     const location = useLocation();
     const isPreHeaderHidden = isHeaderHidden(location.pathname);
     const [isMobileHeader,setIsMobileHeader]= useState(false);
+
+
     useEffect(() => {
-        isHeaderHidden(location.pathname)
+        checkLoginStatus(location, navigate);
+    }, [location])
+
+    useEffect(() => {
+        isHeaderHidden(location.pathname);
     }, [location]);
+    useEffect(()=>{
+        if(location.pathname==="/"){
+            handleItemClick(0)
+        } else if (location.pathname === "/blogs") {
+            handleItemClick(1)
+        }
+        else if (location.pathname === "/profile") {
+            handleItemClick(null)
+        }
+    },[location]);
 
     const handleItemClick = (index) => {
         setActiveItemIndex(index);
@@ -27,7 +45,7 @@ const Header = () => {
                 <div className='header-container'>
                     <div className='header-logo-container' >
                         <div className="logo-header">
-                            <img src={mixedbag} alt=""/>
+                            <img src={mixedbag} alt="" onClick={() => navigate("/")} />
                         </div>
                     </div>
                     <div className='header-links-container'>

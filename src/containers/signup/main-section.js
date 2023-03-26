@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input';
 import "./style.scss"
 import { sendFailureNotification } from '../../services/notifications';
-import navigateToRoute from '../../utils/navigate-validator';
 import { GreySphere, PinkSphere } from '../../components/icons';
 import mixedbag from "../../resources/mixedbag.png"
 import Password from '../../components/password';
@@ -18,7 +17,6 @@ const MainSection = () => {
     event.preventDefault();
     sendFailureNotification("Logged In!!")
     console.log(`Email: ${email} Password: ${password}`);
-    navigateToRoute(navigate, 'signup');
   }
 
   return (

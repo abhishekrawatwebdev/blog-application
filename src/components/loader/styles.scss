@@ -1,0 +1,34 @@
+@import '../../variables';
+
+.loader-container{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: $dark-background;
+
+    .loader-img img{
+        height: 36px;
+        animation: breathing 3s infinite ease-in-out;
+    }
+}
+
+@keyframes breathing {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+}

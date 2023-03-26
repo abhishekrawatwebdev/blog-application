@@ -8,3 +8,7 @@ export const setLocalStorageKey = (key, value) => {
 export const removeLocalStorageKey = (key) => {
     delete localStorage.removeItem(key);
 };
+
+export const clearLocalStorage = () => {
+    window.localStorage.clear();
+};

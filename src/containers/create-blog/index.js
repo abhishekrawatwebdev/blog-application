@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Loader from '../../components/loader';
 import MainSection from './main-section'
 
 const CreateBlog = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, [])
+
   return (
-    <div>
-        <MainSection/>
-    </div>
+    isLoading ? <Loader /> :
+      <div>
+        <MainSection setIsLoading={setIsLoading} />
+      </div>
   )
 }
 

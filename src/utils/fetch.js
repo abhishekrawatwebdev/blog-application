@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { sendFailureNotification } from '../services/notification';
+import { sendFailureNotification } from '../services/notifications';
 
 export const fetchUrl = async (url, options = {}) => {
     try {
@@ -9,7 +9,7 @@ export const fetchUrl = async (url, options = {}) => {
     } catch (error) {
         console.log('API failed', url);
         console.log('API failed', error);
-        sendFailureNotification('Please try again after sometime. Contact support if the problem persists.');
+        sendFailureNotification('Please try again after sometime.');
         return { error };
     }
 };
